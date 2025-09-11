@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Receipt Form</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Bootstrap Select CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>      
+     @import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: "Onest", sans-serif;
+      }
+      /* Loader full screen */
+      #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: transform 1s ease-in-out; /* smooth slide */
+      }
+
+      /* Loader hide animation */
+      #loader.slide-up {
+        transform: translateY(-100%);
+      }
+
+      /* Logo style */
+      #loader img {
+        width: 150px;
+        filter: grayscale(100%);
+        animation: pulseBlink 1.5s infinite ease-in-out;
+      }
+
+      /* Logo pulse + blink effect */
+      @keyframes pulseBlink {
+        0% {
+          transform: scale(1);
+          filter: grayscale(100%);
+          opacity: 0.7;
+        }
+        50% {
+          transform: scale(1.2);
+          filter: grayscale(0%);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          filter: grayscale(100%);
+          opacity: 0.7;
+        }
+      }
+
+      /* Hide form initially */
+      #mainContent {
+        display: none;
+      }
+
+
+
+      ::selection{
+        background-color: #000;
+        color: #fff;
+      }
+
+
+ .form-header h1 {
+        color: white;
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        color: #494949;
+        font-size: 3rem;
+        padding: 50px 0px 20px 150px;
+        line-height: 1;
+      }
+
+.logolight-img{
+padding-right: 180px;
+margin-top: 20px;
+}
+
+
+
+      .form-header h1 span {
+        font-weight: 250;
+        letter-spacing: -0.04em;
+        color: #262626;
+        font-size: 3.5rem;
+      }
+
+    
+
+      .form-box {
+        background: white;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        padding: 50px 70px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        height: 70vh;
+        /* max-width: 800px; */
+        /* margin: -40px auto 50px auto; */
+      }
+
+
+      .form-step {
+        display: none;
+        animation: fadeIn 0.4s ease-in-out;
+      }
+
+      .form-step.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .btn-next,
+      .btn-prev {
+        min-width: 100px;
+      }
+
+
+      .bookingcontainer {
+        background-color: #000;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .form-top-part h3 {
+        font-weight: 600;
+        font-size: 2.8rem;
+        color: #000000;
+      }
+
+
+
+      .form-select:focus {
+        border-color: #1a1a1a;
+        outline: 0;
+        box-shadow: none !important;
+      }
+
+      .form-top-part h5 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #000000 !important;
+        padding: 0px 0px 10px 20px;
+      }
+
+      .form-top-part p {
+        font-weight: 400;
+        font-size: 1.4rem;
+        color: #000000;
+        margin-bottom: 50px;
+        line-height: 1.1;
+      }
+
+      .form-select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #fff;
+        border: 1px solid #1a1a1a;
+        border-radius: 6px;
+        padding: 10px 30px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 13 12' fill='none'%3E%3Cpath d='M6.49781 11.0342L0.484267 0.618417L12.5114 0.618418L6.49781 11.0342Z' fill='%231A1A1A'/%3E%3C/svg%3E");
+
+        background-size: 15px; /* yaha se size bada karna */
+      }
+
+      /* Remove focus outline glow */
+      .form-select:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #1a1a1a;
+      }
+
+
+      .form-top-part {
+     
+        height: 46vh;
+      }
+
+    .submi-btn  , .btn-prev,
+      .btn-next {
+        border: none;
+        /* padding: 10px 70px; */
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 1.7rem;
+        color: #ebebeb;
+        width: 40%;
+        height: 60px; }
+
+
+      .btn-prev {
+        background-color: #fff;
+        color: #000;
+        border: 2px solid #000;
+
+      }
+      .custom-input {
+        border-radius: 6px;
+        padding: 7px 30px;
+        font-size: 1.3rem;
+        border: 1px solid #1a1a1a;
+        text-transform: uppercase;
+        border-radius: 6px; /* rounded corners */
+        font-size: 1.5rem;
+        outline: none;
+        transition: border-color 0.2s ease;
+      }
+
+      .custom-input::placeholder {
+        font-weight: 400;
+        color: #c0c0c0;
+                text-transform: capitalize;
+      }
+
+      .custom-input:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #1a1a1a;
+      }
+      .colorheading {
+        margin-top: 100px;
+      }
+      input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox ke liye */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+      width: 100%;
+    }
+    #otherInput {
+      display: none;
+      margin-top: 10px;
+    }
+    /* Tags style */
+    .selected-tags {
+      margin-bottom: 10px;
+    }
+    .tag {
+      display: inline-block;
+      background: #003366;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }   
+    
+    /* ---------------------------model----------------------------- */
+ .modal-header {
+  
+    justify-content: start !important;
+    padding: 4rem 7rem 2rem 7rem;
+    border-bottom: 2px  dashed #797979;
+    border-top-left-radius: 50px !important;
+    border-top-right-radius: 50px !important;
+}
+.modal-content {
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    outline: 0;
+}
+.modal-footer{
+      padding: 0rem 0rem 4rem 0rem;
+      justify-content: center;
+      border-top: none
+}
+.modal-header h3{
+font-weight: 500;
+font-size:1.1rem;
+color: #000000;
+line-height: 13px;
+margin-top: 5px;
+}
+.modal-header  p{
+font-weight: 500;
+font-size:1.1rem;
+color: #000000;
+line-height: 13px;
+
+}
+.modal-body{
+  padding: 2rem 5rem;
+}
+.modal-body .label{
+font-weight: 500;
+font-size: 1.2rem;
+line-height: 1;
+color: #797979;
+padding-bottom: 10px;
+margin-left: 10px;
+}
+
+.modal-body .value input{
+font-weight: 500;
+font-size: 1.2rem;
+line-height: 1;
+text-transform: uppercase;
+color: #000000;
+border: none;
+background-color: #fff;
+}
+
+ .conformbtn{
+  border: none;
+  background-color: #000;
+  padding: 15px 100px;
+font-weight: 700;
+color: #EBEBEB;
+border-radius: 12px;
+font-size: 1.3rem;
+}
+.editbtn{
+  background-color: #606060;
+    border: none;
+  padding: 15px 50px;
+font-weight: 700;
+color: #EBEBEB;
+border-radius: 12px;
+font-size: 1.3rem;
+
+}
+
+div:where(.swal2-icon).swal2-error {
+    display: none !important;
+}
+
+ .swal2-icon-error button{
+    background-color: #c44a4a !important;
+    font-size: 1rem;
+        padding:10px 40px !important;
+}
+
+.swal2-icon-success button{
+     background-color: #709448 !important;
+    font-size: 1rem;
+        padding:6px 40px !important;
+}
+.swal2-icon-success h2{
+  font-size: 1.5rem;
+}
+.swal2-icon-success .swal2-html-container{
+font-size: 1rem;
+}
+div:where(.swal2-icon) .swal2-icon-show{
+    display: none !important;
+}
+
+    .tag {
+      background-color: #606060;
+      color: white;
+      padding: 7px 20px;
+      border-radius: 20px;
+      margin: 5px;
+      display: inline-block;
+      font-size: 1.1rem;
+    }
+   
+    .checkmark {
+      float: right;
+      color: #000000;
+      font-weight: bold;
+    }
+    .other-input {
+      padding: 7px 20px;
+      margin: 5px;
+      width: calc(100% - 10px);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+.dropdown-item.active, .dropdown-item:active {
+    color: var(--bs-dropdown-link-active-color);
+    text-decoration: none;
+  background-color: #606060;
+}
+    .multylist{
+      background-color: #000;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1.3rem;
+    }
+    .dropdown-item {
+    font-size: 1.1rem;
+}
+.modal-body .value input .disabled{
+  background-color: #fff !important;
+}
+
+.dropdown-menu.show {
+    overflow: auto;
+    display: block;
+    height: 200px;
+}
+
+
+
+
+div:where(.swal2-container) button:where(.swal2-styled):not([disabled]) {
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+
+
+#selectedTags{
+  height: 150px;
+  overflow: auto;
+}
+
+/* 
+
+.fixed-bottom{
+bottom: -30px !important;
+}
+ 
+*/
+
+
+    /* -------------------------------------------------model-------------------------------------------------------- */
+
+
+@media (max-width: 991.98px) {
+  .form-top-part h5 {
+    font-size: 1.5rem;
+    padding: 0px 0px 10px 10px;
+}
+.colorheading {
+    margin-top: 0px;
+}
+
+.modal-header {
+    padding: 3rem 2rem 2rem 4rem;
+}
+.modal-body {
+    padding: 2rem 2rem;
+}
+.modal-body .label {
+    font-size: 1rem;
+}
+.modal-body .value input {
+    font-weight: 500;
+    font-size: 1rem;
+}
+#selectedTags{
+  height: 255px;
+}
+.conformbtn {
+    padding: 13px 50px;
+}
+.form-select {
+    padding: 15px 30px;
+
+}
+.modal-footer {
+    padding: 0rem 0rem 2rem 0rem;
+}
+.custom-input {
+    padding: 15px 30px;
+
+}
+.form-box {
+    padding: 62px 70px;
+
+}
+.form-header h1 {
+
+    font-size: 4.5rem;
+        padding: 70px 0px 20px 80px;
+
+}
+.form-header h1 span {
+    font-size: 4.5rem;
+}
+}
+
+
+@media (max-width: 500px) {
+.form-header h1 span {
+    font-size: 2rem;
+}
+.form-header h1 {
+    font-size: 2.2rem;
+            padding: 60px 0px 0px 40px;
+}
+.logolight-img {
+    padding-right: 30px;
+    margin-top: 68px;
+  }
+  .logolight-img  img{
+width: 46px;
+        height: 38px;
+        object-fit: cover;
+  }
+.form-box {
+    padding: 40px;
+
+  }
+  .form-top-part h3 {
+    font-size: 2rem;
+}
+.form-top-part p {
+    line-height: 1;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+.form-select {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    background-size: 12px;
+}
+.form-top-part h5 {
+    font-size: 1rem;
+    padding: 0px 0px 0px 10px;
+}
+.custom-input {
+    font-size: 1.2rem;
+      padding: 10px 25px;
+}
+.submi-btn, .btn-prev, .btn-next {
+height: 40px;
+
+    font-size: 1rem;
+    width: 49%;
+
+  }
+            /* .btn-next {
+           width: 100%;
+   height: 50px;
+          } */
+    .multylist{
+    padding: 10px 25px;
+      font-size: 1.1rem;
+    }
+    .tag {
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 3px;
+    font-size: 0.9rem;
+}
+.dropdown-item {
+    font-size: 0.9rem;
+}
+
+    .modal-header {
+    padding: 2rem 1rem 2rem 2rem;
+}
+.modal-header h3 {
+    font-size: 1rem;
+    line-height: 13px;
+}
+.modal-header  p {
+    font-size: 0.8rem;
+    line-height: 6px;
+}
+.modal-body {
+    padding: 2rem 1rem;
+}
+.modal-body .label {
+    font-size: 0.85rem;
+    padding-bottom: 0px;
+    margin-left: 10px;
+}
+.modal-body .value input {
+    font-size: 0.8rem;
+}
+.modal-footer {
+    padding: 0rem 0rem 2rem 0rem;
+}
+.editbtn {
+    padding: 10px 30px;
+    border-radius: 7px;
+    font-size: 1rem;
+}
+.conformbtn {
+    border: none;
+    background-color: #000;
+    padding: 10px 30px;
+    border-radius: 7px;
+    font-weight: 700;
+    color: #EBEBEB;
+    font-size: 1rem;
+}
+
+.fullback{
+  width: 100%;
+}
+ .swal2-icon-error .swal2-html-container {
+  font-size: 0.8rem;
+ }
+   .swal2-icon-error h2{
+    font-size: 1.5rem;
+   }
+    .swal2-icon-error button{
+    background-color: #c44a4a !important;
+    font-size: 0.8rem;
+        padding:7px 40px !important;
+}
+  .form-top-part {
+        height: 41vh;
+      }
+
+      #selectedTags {
+        height: 120px;
+    }
+   } 
+
+</style>
+</head>
+
+
+
+  <body>
+
+    <div id="loader">
+      <!-- <img src="./logo.png" alt="Logo"> -->
+       <img src="./logo.svg" alt="Logo" height="80px" width="80px">
+    </div>
+    <!-- Header -->
+
+
+    <div id="mainContent">
+    <div class="container-fluid bookingcontainer p-0"  >
+      <div class="form-header d-flex justify-content-between align-items-center">
+        <h1><span class="d-block">Booking</span> Print Receipt</h1>
+        <div class="logolight-img" >
+          <img src="./light-logo.png" alt=""  >
+        </div>
+    </div>
+      <!-- Form Box -->
+    <div class="container px-sm-5 p-0">
+        <div class="form-box">
+          <form id="msform" name="msform">
+            <!-- Step 1 -->
+            <div class="form-step active form-one-block">
+              <div class="form-top-part">
+                <h3>Vehicle Details</h3>
+                <p>Please select the vehicle brand of the customer</p>
+                <div class="row gy-md-4 gy-3 align-items-center justify-content-between">
+                  <div class="col-lg-5">
+                    <select
+                      id="Brand"
+                      name="Brand"
+                      class="form-select"
+                      required >
+                      <option value="" disabled selected>Select Brand</option>
+                      <option value="Audi">Audi</option>
+                      <option value="BMW">BMW</option>
+                      <option value="Chevrolet">Chevrolet</option>
+                      <option value="Citroen">Citroen</option>
+                      <option value="Datsun">Datsun</option>
+                      <option value="Ford">Ford</option>
+                      <option value="Hyundai">Hyundai</option>
+                      <option value="Honda">Honda</option>
+                      <option value="Jeep">Jeep</option>
+                      <option value="Kia">Kia</option>
+                      <option value="Land Rover">Land Rover</option>
+                      <option value="Mahindra">Mahindra</option>
+                      <option value="Maruti Suzuki">Maruti Suzuki</option>
+                      <option value="Mercedes-Benz">Mercedes-Benz</option>
+                      <option value="MG Motors">MG Motors</option>
+                      <option value="Nissan">Nissan</option>
+                      <option value="Renault">Renault</option>
+                      <option value="Skoda">Skoda</option>
+                      <option value="Tata">Tata</option>
+                      <option value="Toyota">Toyota</option>
+                      <option value="Volkswagen">Volkswagen</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-5">
+                    <select id="Model" class="form-select" disabled required>
+                      <option value="" selected>Select Model</option>
+                    </select>
+                  </div>
+                  <div
+                    class="col-lg-8"
+                    id="otherModelContainer"
+                    style="display: none">
+                    <h5 class="text-muted">Enter your specific model name</h5>
+                    <input
+                      type="text"
+                      id="OtherModel"
+                       name="OtherModel"
+                      class="form-control custom-input  ms-lg-3"
+                      placeholder="Enter other model"/>
+                  </div>
+                </div>
+              </div>
+              <div class="text-end mt-4 form-bottom-part text-center">
+                <button type="button" class="btn-next fullback ">Next</button>
+              </div>
+            </div>
+            <!-- Step 2 -->
+             <div class="form-step ">
+             <div class="form-top-part">
+             <div class="d-lg-none d-block ">
+                      <h3 class="colorheading">Vehicle Color</h3>
+                      <p>Please fill out the color of the vehicle</p>
+                    </div>
+                 <div class="row g-lg-5">
+                  <div class="col-lg-7">
+                    <div class="d-lg-block d-none  ">
+                      <h3 class="colorheading">Vehicle Color</h3>
+                      <p>Please fill out the color of the Vehicle</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-5">
+                    <div class="mt-lg-5 ">
+                      <select
+                        id="CarColor"
+                        name="CarColor"
+                        class="form-select"
+                        required
+                      >
+                        <option value="" disabled selected>Select Color</option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Silver">Silver</option>
+                        <option value="Grey">Grey</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Green">Green</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Beige">Beige</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Maroon">Maroon</option>
+                        <option value="Purple">Purple</option>
+                        <option value="Pink">Pink</option>
+                        <option value="Teal">Teal</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <input
+                        type="text"
+                        id="OtherColor"
+                        name="OtherColor"
+                        class="form-control mt-lg-2  mt-3 custom-input"
+                        placeholder="Specify your own color"
+                        style="display: none"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn-prev">
+               Back
+                </button>
+                <button type="button" class=" btn-next">
+                  Next
+                </button>
+              </div>
+          
+            </div> 
+            <!-- Step 3 -->
+             <div class="form-step">
+
+               <div class="form-top-part">
+             <div class="d-lg-none d-block ">
+                      <h3 class="colorheading">Select Service</h3>
+                      <p>Choose the service required by the customer</p>
+                    </div>
+                 <div class="row g-lg-5">
+                  <div class="col-lg-6">
+                    <div class="d-lg-block d-none  ">
+                      <h3 class="colorheading">Select Service</h3>
+                      <p>Choose the service required by the customer</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="mt-lg-5 ">
+                      <!-- Dropdown -->
+  <div class="dropdown">
+    <button class=" multylist dropdown-toggle w-100 d-flex justify-content-between align-items-center" type="button" id="multiSelectBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+      Select Services
+    </button>
+    <ul class="dropdown-menu w-100" aria-labelledby="multiSelectBtn" id="serviceList">
+<li><a class="dropdown-item" href="#" data-value="Car Wash">Car Wash</a></li>
+<li><a class="dropdown-item" href="#" data-value="Ceramic Coating">Ceramic Coating</a></li>
+<li><a class="dropdown-item" href="#" data-value="Denting & Painting">Denting & Painting</a></li>
+<li><a class="dropdown-item" href="#" data-value="Detailing Services">Detailing Services</a></li>
+<li><a class="dropdown-item" href="#" data-value="Graphene Coating">Graphene Coating</a></li>
+<li><a class="dropdown-item" href="#" data-value="High Gloss Treatment">High Gloss Treatment</a></li>
+<li><a class="dropdown-item" href="#" data-value="Hydrodipp">Hydrodipp</a></li>
+<li><a class="dropdown-item" href="#" data-value="Interior Cleaning">Interior Cleaning</a></li>
+<li><a class="dropdown-item" href="#" data-value="PPF">PPF</a></li>
+<li><a class="dropdown-item" href="#" data-value="Sunroof PPF (UV Protected)">Sunroof PPF (UV Protected)</a></li>
+<li><a class="dropdown-item" href="#" data-value="Window Film">Window Film</a></li>
+      <li><a class="dropdown-item other-option" href="#" data-value="Other">Other</a></li>
+    </ul>
+  </div>
+
+    <div id="selectedTags" class="mt-3"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mt-4">
+                <button type="button" class=" btn-prev">
+                  Back
+                </button>
+                <button type="button" class="btn-next">
+                  Next
+                </button>
+              </div>
+            </div> 
+            <!-- Step 4-->
+            <div class="form-step ">
+              <div class="form-top-part">
+                <h3>Select City</h3>
+                <p>Mention the place of service</p>
+                <div class="row gy-md-4 gy-3 align-items-center justify-content-between">
+                  <div class="col-lg-5">
+                                  <select id="State" name="State" class="form-select" required>
+      <option value="" selected disabled>Select State</option>
+    </select>
+    </div>
+
+                  <div class="col-lg-5">
+       <select id="Store"  name="Store"  class="form-select" disabled required>
+                                    <option value=" " selected disabled>Select Store</option>
+                                  </select>
+                  </div>
+                  <div
+                    class="col-lg-8"
+                    id="otherStoreContainer"
+                    style="display: none"
+                  >
+                    <h5 class="text-muted ps-2">Enter Your Specific Store Location</h5>
+                    <input
+                      type="text"
+                      id="OtherStore"
+                      class="form-control custom-input w-lg-75 ms-1"
+                      placeholder="Enter  Store Location"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn-prev">
+               Back
+                </button>
+                <button type="button" class=" btn-next">
+                  Next
+                </button>
+              </div>
+            </div> 
+                        <!-- Step 5-->
+            <div class="form-step ">
+              <div class="form-top-part">
+           <h3> Vehicle Number</h3>
+    <p>Provide the registration number of your Vehicle <span class="d-lg-block">
+      (If no registration number please mention temporary number)
+    </span></p>
+                <div class="row ">
+                  <div class="col-lg-6 mt-lg-0 mt-lg-0 mt-md-5 mt-3">
+                    <input
+                      type="text"
+                      class="form-control custom-input vninput "
+                      placeholder="Enter Vehicle  Number"
+                      required
+                      name="Car_Number"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn-prev">
+               Back
+                </button>
+                <button type="button" class=" btn-next">
+                  Next
+                </button>
+              </div>
+            </div>
+           <!-- Step 6-->
+            <div class="form-step ">
+              <div class="form-top-part">
+                <h3>Delivery Date</h3>
+                <p>Select the exact Delivery Date and Time when you will be <span class="d-lg-block">handing over the Vehicle to the customer</span></p>
+                <div class="row gy-md-4 gy-3 align-items-center justify-content-between">
+                  <div class="col-lg-5">
+                <input type="text" id="serviceDate" class="form-control custom-input" placeholder="Select Date" name="dateInput" autocomplete="off">
+                  </div>
+                  <div class="col-lg-5">
+  <input type="text" id="serviceTime" class="form-control custom-input" placeholder="Select Time"   name="timeInput" autocomplete="off" >
+                  </div>
+
+                 
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn-prev">
+               Back
+                </button>
+                <button type="button" class=" btn-next">
+                  Next
+                </button>
+              </div>
+            </div>
+              <!-- Step 7-->
+            <div class="form-step">
+              <div class="form-top-part">
+           <h3>Personal Details</h3>
+    <p>Please fill out the details of the customer</p>
+                <div class="row  align-items-center gy-4 justify-content-between">
+                  <div class="col-md-12 ">
+                    <input
+                      type="text"
+                      class="form-control custom-input "
+                      placeholder="First Name"
+                      required
+                      name="fname"/>
+                  </div>
+                   <div class="col-md-12">
+                    <input
+                      type="text"
+                      class="form-control custom-input "
+                      placeholder="Last Name"
+                      required
+                      name="lname"
+                    />
+                  </div>
+
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn-prev">
+               Back
+                </button>
+                <button type="button" class=" btn-next">
+                  Next
+                </button>
+              </div>
+            </div>
+            <!-- Step 8-->
+            <div class="form-step">
+              <div class="form-top-part">
+           <h3> Contact Number</h3>
+    <p>Enter the customer’s phone number for records and <span class="d-lg-block">follow-up (Preferred whatsapp number)</span></p>
+                <div class="row ">
+                  <div class="col-lg-6">
+                    <input
+                      type="number"
+                      class="form-control custom-input"
+                      placeholder="Phone Number"
+                       id="phoneNumber"
+                       required
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn-prev">
+               Back
+                </button>
+                <button type="button" class=" btn-next">
+                  Next
+                </button>
+              </div> -->
+                  <div class="d-flex justify-content-between mt-4">
+                <button type="button" class=" btn-prev">
+                  Back
+                </button>
+                <button type="submit" class=" submi-btn">Done</button>
+                
+              </div>
+            </div>
+            <!-- Step 8 -->
+     <!-- <div class="form-step">
+   <div class="form-top-part">
+  <div class="row gx-5">
+    <div class="col">
+     <div class="p-3 border bg-light">
+
+     </div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-light">
+
+
+      </div>
+    </div>
+  </div> 
+
+             
+              </div>
+              <div class="d-flex justify-content-between mt-4">
+                <button type="button" class=" btn-prev">
+                  Back
+                </button>
+                <button type="submit" class=" submi-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Done</button>
+                
+              </div>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+
+<!-- ===================================model====================================== -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" >
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content" id="confirmationContent">
+      
+
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" >Edit</button>
+        <button type="button" class="btn btn-primary" id="confirmSubmit">Confirm & Submit</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="./sales_form.js"></script>
+<!------------------------------------------- // Replace with your EmailJS Public Key ----------------------------------------->
+
+<script>
+  emailjs.init("-WovZf3jMK10jTEUb"); 
+</script>
+
+
+
+
+    <script>
+      // Loader timeout
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          // slide-up class add
+          document.getElementById("loader").classList.add("slide-up");
+
+          // form show after animation
+          setTimeout(function () {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("mainContent").style.display = "block";
+          }, 1000); // wait for slide animation
+        }, 5000); // 5 seconds loader time
+      });
+    </script>
+  </body>
+</html>
