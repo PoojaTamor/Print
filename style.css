@@ -1,1341 +1,631 @@
-
-      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gemunu+Libre:wght@200..800&display=swap");
-      body {
-        background-color: #1b1b1b;
-        font-family: "DM Sans", serif;
-      }
-      .inner-card {
-        padding: 40px 60px 70px 60px;
-        background-color: #3e3e3e;
-        margin-top: 70px;
-        color: #fff;
-        border-radius: 15px;
-      }
-      .inner-card h1 {
-        padding-top: 40px;
-        font-size: 3rem;
-        line-height: 1;
-        font-weight: 500;
-      }
-      .phone,
-      .mail {
-        padding: 10px 40px;
-        border: 2px solid #fff;
-        color: #fff;
-        border-radius: 50px;
-        text-decoration: none;
-        font-size: 1.5rem;
-      }
-      .contectmail-link {
-        margin: 60px 0px 40px 0px;
-      }
-      .phone:hover {
-        color: #fff;
-      }
-      .mail:hover {
-        color: #fff;
-      }
-      .social-buttons {
-        display: flex;
-        gap: 12px;
-      }
-      .social-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 240px;
-        height: 55px;
-        border: 2px solid #fff;
-        border-radius: 50px;
-        text-decoration: none;
-        color: #fff;
-        font-size: 20px;
-        transition: 0.3s;
-        position: relative;
-      }
-      .social-btn i {
-        background-color: #ffd700;
-        border-radius: 50%;
-        padding: 10px;
-        color: #2d2d2d;
-        width: 35px;
-        height: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .social-btn:hover {
-        background-color: #fff;
-        color: #2d2d2d;
-      }
-
-      .circul-svg {
-        margin-top: -40px;
-      }
-
-      .form-contaner .form-control {
-        background-color: #1a1a1a;
-        border: 2px solid #878787;
-        color: #fff;
-        border-radius: 50px;
-        padding: 14px 25px;
-        font-size: 1.5rem;
-      }
-
-      .mysdsssds{
-        font-size: 5rem;
-        color: red;
-      }
-.cracolor .form-control{
-  
-    /* background-color: #1c1c1c; */
-    /* color: white; */
-    border: none;
-    border-radius: 10px;
-    padding: 15px 10px 15px 30px;
-    font-size: 1.6rem;
-}
-
-      .form-contaner ::placeholder {
-        color: #878787;
-      }
-      .form-contaner label {
-        font-weight: bold;
-        margin-top: 10px;
-        font-size: 18px;
-      }
-
-      .form-contaner h2 {
-        font-size: 4rem;
-        margin-bottom: 20px;
-        color: #fff;
-        padding: 50px 0px 50px 50px;
-      }
-      .form-control:focus {
-        outline: 0;
-        box-shadow: none;
-      }
-      .form-contaner {
-        padding: 50px 60px;
-      }
-      .form-contaner h6 {
-        font-size: 3rem;
-        color: #fff;
-        padding: 70px 0px 30px 40px;
-        font-weight: 600;
-      }
-
-      .card-checkbox {
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        height: 300px;
-        text-align: center;
-        /* border: 1px solid #fff; */
-        border-radius: 10px;
-        background-color: #fff;
-        background-color: #1b1b1b;
-        transition: background-color 0.3s, color 0.3s;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .card-checkbox img {
-        width: 50px;
-        margin-bottom: 10px;
-      }
-      .card-checkbox p {
-        margin: 0;
-        font-size: 3rem;
-        line-height: 1;
-        font-weight: 600;
-        padding-top: 30px;
-      }
-      .card-checkbox input[type="checkbox"] {
-        display: none;
-      }
-
-      .form-contaner label {
-        background-color: #fff;
-      }
-      .location-list {
-        width: 300px;
-        padding-left: 30px;
-      }
-      .form-select {
-        padding: 15px 30px 15px 30px;
-        font-size: 1.5rem;
-        background-image: url("./img/list_arrow.png");
-        background-position: right 45px center;
-      }
-      .form-select:focus {
-        border-color: #fff;
-        outline: 0;
-        box-shadow: none;
-      }
-
-      .form-select option {
-        background: #ffffff; /* White background */
-        color: black; /* Black text */
-      }
-      .send-btn {
-        text-align: right;
-      }
-      .send-btn button {
-        width: 200px;
-        height: 80px;
-        font-size: 30px;
-        border: none;
-        background-color: #f2d134;
-        border-radius: 10px;
-      }
-
-      .date-time-wrapper {
-        display: flex;
-        gap: 15px;
-        /* justify-content: center; */
-        align-items: center;
-        padding: 20px;
-      }
-
-      /* Input Styles */
-
-      .date-field,
-      .time-field {
-        padding: 12px;
-        font-size: 1.5rem;
-        border: none;
-        border-radius: 10px;
-        text-align: center;
-        outline: none;
-        /* width: 200px; */
-        /* background: transparent; */
-        color: #000;
-        transition: all 0.3s ease-in-out;
-      }
-      .time-field {
-        background-color: #f2d134;
-      }
-
-      .date-field {
-        background-color: #fff;
-        color: #000;
-      }
-
-      /* Hover & Focus Effects */
-
-      /* Placeholder Styling */
-      .date-field::placeholder,
-      .time-field::placeholder {
-        color: #000;
-      }
-
-      /* Flatpickr Calendar Customization */
-      .flatpickr-calendar {
-        background: #222;
-        color: white;
-        border-radius: 12px;
-        font-weight: 900;
-      }
-
-      .flatpickr-day {
-        color: white;
-      }
-
-      .flatpickr-day.selected {
-        background: #f2d134 !important;
-        color: #000 !important;
-      }
-
-      .flatpickr-calendar.hasTime .flatpickr-time {
-        height: 40px;
-        border-top: none;
-      }
-      .flatpickr-time input.flatpickr-hour {
-        font-weight: bold;
-        color: #fff;
-        font-size: 1.5rem;
-      }
-      .flatpickr-time input.flatpickr-minute,
-      .flatpickr-time input.flatpickr-second {
-        font-weight: 400;
-        color: #fff;
-        font-size: 1.5rem;
-      }
-      .flatpickr-time .flatpickr-am-pm {
-        color: #fff;
-        font-size: 1.5rem;
-      }
-      .flatpickr-time .flatpickr-time-separator,
-      .flatpickr-time .flatpickr-am-pm {
-        color: #fff;
-        font-size: 1.5rem;
-      }
-      .flatpickr-time input:hover,
-      .flatpickr-time .flatpickr-am-pm:hover,
-      .flatpickr-time input:focus,
-      .flatpickr-time .flatpickr-am-pm:focus {
-        background: transparent;
-        color: #fff;
-        font-size: 1.5rem;
-        font-size: 1.5rem;
-      }
-
-      .flatpickr-time input:hover,
-      .flatpickr-time .flatpickr-am-pm:hover,
-      .flatpickr-time input:focus,
-      .flatpickr-time .flatpickr-am-pm:focus {
-        background: transparent;
-        color: #fff;
-        font-size: 1.5rem;
-      }
-      .flatpickr-day.selected,
-      .flatpickr-day.startRange,
-      .flatpickr-day.endRange,
-      .flatpickr-day.selected.inRange,
-      .flatpickr-day.startRange.inRange,
-      .flatpickr-day.endRange.inRange,
-      .flatpickr-day.selected:focus,
-      .flatpickr-day.startRange:focus,
-      .flatpickr-day.endRange:focus,
-      .flatpickr-day.selected:hover,
-      .flatpickr-day.startRange:hover,
-      .flatpickr-day.endRange:hover,
-      .flatpickr-day.selected.prevMonthDay,
-      .flatpickr-day.startRange.prevMonthDay,
-      .flatpickr-day.endRange.prevMonthDay,
-      .flatpickr-day.selected.nextMonthDay,
-      .flatpickr-day.startRange.nextMonthDay,
-      .flatpickr-day.endRange.nextMonthDay {
-        border-color: #f2d134;
-      }
-      .flatpickr-day.inRange,
-      .flatpickr-day.prevMonthDay.inRange,
-      .flatpickr-day.nextMonthDay.inRange,
-      .flatpickr-day.today.inRange,
-      .flatpickr-day.prevMonthDay.today.inRange,
-      .flatpickr-day.nextMonthDay.today.inRange,
-      .flatpickr-day:hover,
-      .flatpickr-day.prevMonthDay:hover,
-      .flatpickr-day.nextMonthDay:hover,
-      .flatpickr-day:focus,
-      .flatpickr-day.prevMonthDay:focus,
-      .flatpickr-day.nextMonthDay:focus {
-        cursor: pointer;
-        background: #ddcb76fa;
-        border-color: #ddcb76fa;
-        color: #000;
-      }
-      span.flatpickr-weekday {
-        cursor: default;
-        font-size: 90%;
-        background: transparent;
-        color: #fff;
-      }
-      .flatpickr-months .flatpickr-month {
-        background: transparent;
-        color: #fff;
-        fill: rgba(0, 0, 0, 0.9);
-      }
-      .flatpickr-day.flatpickr-disabled,
-      .flatpickr-day.flatpickr-disabled:hover {
-        color: #595a5b;
-      }
-      .flatpickr-day.flatpickr-disabled,
-      .flatpickr-day.flatpickr-disabled:hover,
-      .flatpickr-day.prevMonthDay,
-      .flatpickr-day.nextMonthDay,
-      .flatpickr-day.notAllowed,
-      .flatpickr-day.notAllowed.prevMonthDay,
-      .flatpickr-day.notAllowed.nextMonthDay {
-        color: #595a5b;
-      }
-      /* .flatpickr-time {
-    height: auto;
-    width: 100px;
-} */
-      .flatpickr-months .flatpickr-prev-month svg,
-      .flatpickr-months .flatpickr-next-month svg {
-        width: 14px;
-        height: 14px;
-        fill: #fff;
-      }
-
-      .time-box {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .cardetail-box {
-        padding: 60px 70px 80px 70px;
-        background-color: #333333;
-        color: #fff;
-        border-radius: 20px;
-        margin-top: 40px;
-      }
-      .cardetail-boxx {
-        margin-top: 40px;
-      }
-
-      .cardetail-box2 {
-        padding: 60px 70px 80px 70px;
-        background-color: #fff;
-        border-radius: 20px;
-        margin-top: 40px;
-      }
-      .dropdown-custom {
-        /* width: 200px; */
-      }
-
-      .cardetail-box h5 {
-        font-size: 2.5rem;
-        font-weight: 500;
-        /* padding-left: 60px; */
-      }
-      .dropdown-custom-yellow .form-select {
-        background-image: url("./img/list_arrow2.png");
-      }
-      .dropdown-custom select {
-        background-color: #1c1c1c;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 15px 10px 15px 30px;
-        font-size: 1.6rem;
-        width: 100%;
-      }
-
-      .dropdown-custom-yellow select {
-        background-color: #f6c700;
-        color: black;
-        font-weight: 500;
-      }
-
-      label {
-        margin-bottom: 20px;
-        font-size: 2rem;
-        font-weight: 500;
-        padding-left: 10px;
-      }
-      .out-selected {
-        padding-top: 35px;
-      }
-      .check-box {
-        display: flex;
-        flex-direction: column;
-      }
-      .check-box input[type="checkbox"] {
-        display: none;
-      }
-      .check-box label {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 5px 10px;
-        background-color: lightgray;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-      }
-
-      /* Change label background when checkbox is checked */
-      .check-box input[type="checkbox"]:checked + label {
-        background-color: yellow;
-      }
-
-      .cardetail-box3 {
-        background-color: #f2d134;
-      }
-      .cardetail-box3 .contact-form h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 20px;
-      }
-
-      .cardetail-box3 .form-control {
-        border-radius: 10px;
-        border: none;
-        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .cardetail-box3 .form-control:focus {
-        outline: none;
-        box-shadow: none;
-      }
-
-      .cardetail-box3 .form-control {
-        padding: 15px 30px;
-        font-size: 1.2rem;
-      }
-
-      .cardetail-box3 .black-input {
-        background-color: #1b1b1b; /* Black input background */
-        color: #fff;
-      }
-
-      .cardetail-box3 .black-input::placeholder {
-        color: #bbb;
-      }
-
-      .cardetail-box3 .submit-btn {
-        border-radius: 10px;
-        padding: 10px 15px;
-        background-color: #fff;
-        color: #000;
-        font-weight: bold;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .cardetail-box3 .submit-btn:hover {
-        background-color: #f0f0f0;
-      }
-
-      .cardetail-box3 h4 {
-        font-size: 2.5rem;
-        padding-left: 10px;
-        font-size: 500;
-        padding-bottom: 50px;
-      }
-      .info-text p {
-        font-size: 1rem;
-        color: #696c3f;
-        padding-left: 25px;
-        margin-top: 15px;
-      }
-      .checkbox-container {
-        display: flex;
-        align-items: center;
-        margin-top: 20px;
-      }
-      .checkbox-container label {
-        margin-bottom: 0px;
-        font-size: 2rem;
-      }
-
-      .form-check-input {
-        width: 35px;
-        height: 35px;
-        margin-right: 15px;
-        accent-color: #000; /* Black checkbox styling */
-        margin-left: 20px;
-      }
-      .form-check-input:checked {
-        background-color: #000;
-        border-color: #000;
-      }
-      .form-check-input:focus {
-        border-color: none;
-        outline: 0;
-        box-shadow: none;
-      }
-
-      .cardetail-box3 .form-label {
-        margin-bottom: 12px;
-        font-size: 2rem;
-        font-weight: 500 !important;
-      }
-      .cardetail-box3 .form-check-label {
-        font-size: 1rem;
-        color: #000;
-        font-size: 1.3rem;
-      }
-      .service-outer-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        height: 200px;
-      }
-      .service-inner-box {
-        margin-top: 30px;
-      }
-
-      /* Hide checkbox */
-      .service-inner-box input[type="checkbox"] {
-        display: none;
-      }
-
-      /* Label styles */
-      .service-inner-box label {
-        display: inline-block;
-        padding: 7px 50px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        text-align: center;
-        cursor: pointer;
-        color: #1b1b1b;
-        font-weight: 600;
-        font-size: 1.3rem;
-
-        transition: background-color 0.3s ease, color 0.3s ease;
-        background-color: #ededed;
-      }
-
-      /* Change label background when checkbox is checked */
-      .service-inner-box input[type="checkbox"]:checked + label {
-        background-color: #fbd904; /* Yellow background */
-        color: #000; /* Black text */
-        border-color: #fbd904;
-      }
-      .cardetail-box2 h5 {
-        font-size: 2.5rem;
-        margin-bottom: 50px;
-        padding-left: 30px;
-      }
-
-      .location-list2 {
-        width: unset;
-        padding-left: unset;
-      }
-
-      .location-list2 .form-select {
-        /* padding: 20px 30px 20px 30px; */
-        padding: 13px 20px;
-        font-size: 1.5rem;
-        background-image: url(./img/list_arrow2.png);
-        background-position: right 45px center;
-        border-radius: 10px;
-        border: 2px solid #878787;
-      }
-      .location1 .form-select {
-        background-color: #f2d134;
-        border: 1px solid #f2d134;
-      }
-      .location1 .form-select:focus {
-        border-color: #f2d134 !important;
-      }
-      .location-list2 .form-select:focus {
-        border-color: #878787;
-        outline: 0;
-        box-shadow: none;
-      }
-      .location-box label {
-        padding-left: 10px;
-      }
-      .footer-copyright {
-        font-size: 1.4rem;
-        padding: 80px 0px 40px 0px;
-        border-top: 1px solid #ededed;
-      }
-      .copyrignt {
-        padding-left: 70px;
-      }
-
-      .whatsapp-button-box {
-        padding: 100px 0px 50px 0px;
-      }
-      .whatsapp-button {
-        background-color: #25d366; /* WhatsApp green */
-        color: #000;
-        font-weight: 500;
-        font-size: 1.5rem;
-        border-radius: 15px; /* Rounded corners */
-        padding: 20px 50px;
-        text-decoration: none;
-        transition: transform 0.2s, box-shadow 0.2s;
-      }
-      .whatsapp-button:hover {
-        color: #000;
-      }
-
-      .whatsapp-button i {
-        margin-left: 10px; /* Space between text and icon */
-        font-size: 30px;
-      }
-
-      #msform {
-        /* text-align: center; */
-        position: relative;
-        margin-top: 20px;
-      }
-
-      /* #msform fieldset {
-    background: white;
-    border: 0 none;
-    border-radius: 0.5rem;
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    padding-bottom: 20px;
-    position: relative
-} */
-
-      /* .form-card {
-    text-align: left
-} */
-
-      #msform fieldset:not(:first-of-type) {
-        display: none;
-      }
-      /* 
-#msform input,
-#msform textarea {
-    padding: 8px 15px 8px 15px;
-    border: 1px solid #ccc;
-    border-radius: 0px;
-    margin-bottom: 25px;
-    margin-top: 2px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: montserrat;
-    color: #2C3E50;
-    background-color: #ECEFF1;
-    font-size: 16px;
-    letter-spacing: 1px
-} */
-
-      /* #msform input:focus,
-#msform textarea:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    border: 1px solid #673AB7;
-    outline-width: 0
-} */
-
-      #msform .action-button {
-        width: 100px;
-        background: #1b1b1b;
-        font-weight: 500;
-        color: white;
-        border: 0 none;
-        border-radius: 0px;
-        cursor: pointer;
-        padding: 10px 5px;
-        font-size: 1.5rem;
-        margin: 30px 0px 10px 5px;
-        float: right;
-        position: relative;
-        /* padding-right: 30px; */
-      }
-
-      #msform .action-button-previous {
-        /* width: 100px; */
-        background: #1b1b1b;
-        font-weight: 500;
-        color: white;
-        border: 0 none;
-        border-radius: 0px;
-        cursor: pointer;
-        padding: 10px 0px;
-        margin: 30px 5px 10px 0px;
-        font-size: 1.5rem;
-
-        /* float: right */
-      }
-      #msform .submi-btn {
-        width: 150px;
-        background: #1b1b1b;
-        font-weight: 500;
-        color: white;
-        border: 1px solid #fff;
-        border-radius: 10px;
-        cursor: pointer;
-        padding: 10px 40px;
-        margin: 30px 5px 10px 0px;
-        font-size: 1.5rem;
-      }
-      #msform .action-button-previous:hover,
-      #msform .action-button-previous:focus {
-        background-color: #1b1b1b;
-      }
-
-      .card {
-        z-index: 0;
-        border: none;
-        position: relative;
-      }
-
-      .fs-title {
-        font-size: 25px;
-        color: #673ab7;
-        margin-bottom: 15px;
-        font-weight: normal;
-        text-align: left;
-      }
-
-      .purple-text {
-        color: #673ab7;
-        font-weight: normal;
-      }
-
-      .steps {
-        font-size: 25px;
-        color: gray;
-        margin-bottom: 10px;
-        font-weight: normal;
-        text-align: right;
-      }
-
-      .fieldlabels {
-        color: gray;
-        text-align: left;
-      }
-
-      #progressbar {
-        margin-bottom: 30px;
-        overflow: hidden;
-        color: #7c7c7c;
-        text-align: center;
-        padding-left: 0px;
-      }
-
-      #progressbar .active {
-        color: #fff;
-      }
-
-      #progressbar li {
-        list-style-type: none;
-        font-size: 22px;
-        width: 25%;
-        float: left;
-        position: relative;
-        font-weight: 200;
-      }
-
-      #progressbar #account:before {
-        font-family: FontAwesome;
-        content: "";
-      }
-
-      #progressbar #personal:before {
-        font-family: FontAwesome;
-        content: "";
-      }
-
-      #progressbar #payment:before {
-        font-family: FontAwesome;
-        content: " ";
-      }
-
-      #progressbar #confirm:before {
-        font-family: FontAwesome;
-        content: "";
-      }
-
-      #progressbar li:before {
-        width: 30px;
-        height: 30px;
-        line-height: 45px;
-        display: block;
-        font-size: 20px;
-        color: #ffffff;
-        background: #1b1b1b;
-        border: 2px solid #7c7c7c;
-        border-radius: 50%;
-        margin: 0 auto 20px auto;
-        padding: 2px;
-      }
-
-      #progressbar li:after {
-        content: "";
-        width: 100%;
-        height: 2px;
-        background: #7c7c7c;
-        position: absolute;
-        left: 0;
-        top: 20px;
-        z-index: -1;
-      }
-
-      #progressbar li.active:before {
-        background: #1b1b1b;
-        border: 2px solid #f2d134;
-      }
-
-      #progressbar li.active:after {
-        background: #1b1b1b;
-        border: 1px solid #7c7c7c;
-      }
-      .progress {
-        height: 20px;
-      }
-
-      .progress-bar {
-        background-color: #f2d134;
-      }
-
-      .fit-image {
-        width: 100%;
-        object-fit: cover;
-      }
-      .form-card-section {
-        background-color: transparent;
-      }
-      #progressbar li:after {
-        content: "";
-        width: 100%;
-        height: 1px;
-        background: #7c7c7c;
-        position: absolute;
-        left: 152px;
-        top: 15px;
-        z-index: -1;
-      }
-
-      #progressbar #confirm:after {
-        content: "";
-        width: 0%;
-        height: 2px;
-        background: #7c7c7c;
-        position: absolute;
-        left: 102px;
-        top: 20px;
-        z-index: -1;
-      }
-      /* .flatpickr-input[placeholder] {
-  color: #08090a;
-  font-size: 14px;
-  opacity: 1; 
-}
-
-.flatpickr-alt-input::placeholder {
-  color: #030507 !important;
-  font-size: 14px;
-} */
-      /* .dropdown-custom select {
-    background-color: #1c1c1c;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 15px 10px 15px 30px;
-    font-size: 1.6rem;
-    width: 100%;
-} */
-
-      .model-car {
-        padding: 15px 10px 15px 30px;
-        background-color: #2c2b2b;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 15px 10px 15px 30px;
-        font-size: 1.6rem;
-        width: 100%;
-      }
-      .model-car:focus {
-        outline: none;
-      }
-      [id^="NotiflixNotifyWrap"] > div > .nx-message-icon {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        font-size: 30px;
-        line-height: 40px;
-        text-align: center;
-        left: 13px;
+     @import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: "Onest", sans-serif;
+      }
+      /* Loader full screen */
+      #loader {
+        position: fixed;
         top: 0;
-        bottom: 0;
-        margin: auto;
-        border-radius: inherit;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: transform 1s ease-in-out; /* smooth slide */
       }
 
-   .out-selected   .form-control.mt-3 {
-    border-radius: 10px;
-    padding: 15px 10px 15px 30px;
-    font-size: 1.6rem;
-    outline: none;
-    }
- .out-selected  .form-control.mt-3:focus {
-      border-color: none; /* Purple border on focus */
-      box-shadow: none;
-    }
+      /* Loader hide animation */
+      #loader.slide-up {
+        transform: translateY(-100%);
+      }
 
-    .iti{
-      width: 100% !important;
-    }
-    .form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], .was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"] {
-    padding-right:unset;
-    background-image: url(".."),url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
-    background-position: right 0.75rem center,center right 0.25rem;
-    background-size: 16px 12px,calc(.75em + .375rem) calc(.75em + .375rem);
-}
+      /* Logo style */
+      #loader img {
+        width: 150px;
+        filter: grayscale(100%);
+        animation: pulseBlink 1.5s infinite ease-in-out;
+      }
 
-#OtherStoreInput{
-border-radius: 10px;
-    padding: 15px 10px 15px 30px;
-    font-size: 1.6rem;
-    outline: none;
-
-}
-
-
-      @media (max-width: 977px) {
-        .inner-card h1 {
-          font-size: 2.4rem;
+      /* Logo pulse + blink effect */
+      @keyframes pulseBlink {
+        0% {
+          transform: scale(1);
+          filter: grayscale(100%);
+          opacity: 0.7;
         }
-        .phone,
-        .mail {
-          padding: 10px 25px;
-          font-size: 1rem;
+        50% {
+          transform: scale(1.2);
+          filter: grayscale(0%);
+          opacity: 1;
         }
-        .contectmail-link {
-          margin: 40px 0px 40px 0px;
-        }
-        .circul-svg {
-          margin-top: -2px;
-          width: 120px;
-        }
-        .form-contaner h2 {
-          font-size: 2.5rem;
-          padding: 40px 0px 40px 33px;
-        }
-        .form-contaner .form-control {
-          font-size: 1.2rem;
-        }
-        .form-contaner h6 {
-          font-size: 2.5rem;
-          color: #fff;
-          padding: 55px 0px 30px 40px;
-          font-weight: 600;
-        }
-        .circul-svg {
-          margin-top: -34px;
-          width: 120px;
-          height: 72px;
-        }
-        .card-checkbox p {
-          font-size: 1.5rem;
-
-          padding-top: 15px;
-        }
-        .card-checkbox {
-          height: 200px;
-        }
-        .date-field,
-        .time-field {
-          padding: 7px;
-          font-size: 1.3rem;
-
-          width: 200px;
-        }
-        .send-btn button {
-          width: 200px;
-          height: 68px;
-          font-size: 26px;
-        }
-        .social-btn {
-          width: 136px;
-          height: 48px;
-        }
-        .whatsapp-button {
-          font-size: 1rem;
-        }
-        .whatsapp-button i {
-          font-size: 22px;
-        }
-        #progressbar li:after {
-          left: 90px;
-          top: 13px;
-        }
-        #progressbar li {
-          font-size: 12px;
-        }
-
-        .cardetail-box {
-          padding: 50px 50px 50px 50px;
-          margin-top: 50px;
-        }
-        .cardetail-box h5 {
-          font-size: 2rem;
-        }
-        label {
-          font-size: 1.5rem;
-        }
-        .dropdown-custom select {
-          font-size: 1.3rem;
-        }
-        .out-selected   .form-control.mt-3 {
-          font-size: 1.3rem;
-
-    }
-        #msform .action-button {
-          font-size: 1.3rem;
-        }
-        #msform .action-button-previous {
-          font-size: 1.3rem;
-        }
-        .cardetail-box2 {
-          padding: 50px 50px 50px 50px;
-          border-radius: 10px;
-          margin-top: 20px;
-        }
-        .cardetail-box2 h5 {
-          font-size: 2rem;
-          margin-bottom: 50px;
-          padding-left: 12px;
-        }
-        .service-inner-box label {
-          padding: 7px 18px;
-          border-radius: 7px;
-          font-size: 1rem;
-        }
-        .service-outer-box {
-          height: 161px;
-        }
-        .service-outer-box svg {
-          width: 133px;
-        }
-        .location-list2 .form-select {
-          padding: 13px 11px 11px 20px;
-          font-size: 1.2rem;
-
-          background-position: right 18px center;
-
-          /* background: 51px; */
-        }
-        .location-box label {
-          padding-left: 20px;
-          font-size: 1.3rem;
-        }
-        .cardetail-box3 .form-label {
-          font-size: 1.5rem;
-        }
-        .cardetail-box3 h4 {
-          font-size: 2rem;
-          padding-left: 10px;
-          padding-bottom: 40px;
-        }
-        #progressbar #confirm:after {
-          left: 88px;
+        100% {
+          transform: scale(1);
+          filter: grayscale(100%);
+          opacity: 0.7;
         }
       }
-      @media (max-width: 500px) {
-        .inner-card {
-          padding: 25px 25px 30px 25px;
-          margin-top: 20px;
-          margin-bottom: 40px;
-        }
 
-        .inner-card h1 {
-          font-size: 1.4rem;
-          padding-top: 18px;
-        }
-        .phone,
-        .mail {
-          padding: 7px 12px;
-          font-size: 0.5rem;
-          border: 1px solid #fff;
-        }
-        .contectmail-link {
-          margin: 25px 0px 33px 0px;
-        }
-        .social-btn i {
-          width: 25px;
-          font-size: 15px;
-          height: 25px;
-        }
-        .social-btn {
-          width: 38px;
-          height: 38px;
-          border: 1px solid #fff;
-        }
-        .circul-svg {
-          margin-top: -50px;
-          width: 70px;
-          height: 100px;
-        }
-        .form-contaner {
-          padding: 50px 20px;
-        }
-        .form-contaner h2 {
-          font-size: 1.5rem;
-          padding: 0px 0px 15px 10px;
-        }
-        .form-contaner h6 {
-          font-size: 1.6rem;
-          color: #fff;
-          padding: 25px 0px 15px 30px;
-          font-weight: 600;
-        }
-        .form-contaner .form-control {
-          background-color: #1a1a1a;
-          border: 2px solid #878787;
-          color: #fff;
-          border-radius: 50px;
-          padding: 12px 20px;
-          font-size: 0.7rem;
-        }
-        .whatsapp-button {
-          font-size: 0.8rem;
-          padding: 15px 12px;
-        }
-        .whatsapp-button i {
-          font-size: 17px;
-        }
-        .whatsapp-button-box {
-          padding: 20px 0px 30px 0px;
-        }
-        .footer-copyright {
-          font-size: 0.45rem;
-          padding: 30px 0px 10px 0px;
-          border-top: 1px solid #ededed;
-        }
-        .copyrignt {
-          padding-left: 10px;
-        }
-        .footer-copyright svg {
-          width: 8px;
-        }
-
-        #progressbar li:before {
-          width: 20px;
-          height: 20px;
-          margin: 0 auto 11px auto;
-          border: 1px solid #878787;
-        }
-        #progressbar li:after {
-          left: 41px;
-          top: 10px;
-        }
-        #progressbar li {
-          font-size: 6px;
-        }
-        .cardetail-box {
-          padding: 30px;
-          margin-top: 20px;
-          border-radius: 10px;
-        }
-        .cardetail-box h5 {
-          font-size: 1.5rem;
-          line-height: 1;
-        }
-
-        .cardetail-box3 .form-control {
-          padding: 10px 14px;
-          font-size: 0.8rem;
-        }
-        .cardetail-box3 .form-label {
-          font-size: 1rem;
-        }
-        .info-text p {
-          font-size: 0.5rem;
-          color: #696c3f;
-          margin-top: 7px;
-          padding-left: 11px;
-          line-height: 1.5;
-        }
-
-        #msform .action-button {
-          font-size: 1rem;
-          padding: 10px 5px;
-          margin: 15px 0px 10px 5px;
-        }
-        #msform .action-button-previous {
-          font-size: 1rem;
-          margin: 15px 0px 10px 5px;
-        }
-        label {
-          font-size: 0.78rem;
-        }
-        .dropdown-custom select {
-          border-radius: 5px;
-          padding: 6px 5px 6px 15px;
-          font-size: 0.8rem;
-          width: 100%;
-        }
-        .out-selected   .form-control.mt-3 {
-          border-radius: 5px;
-          padding: 6px 5px 6px 15px;
-          font-size: 0.6rem;
-    }
-        .form-select {
-          background-image: url("./img/list_arrow.png");
-          background-position: right 12px center;
-          background-size: 9px;
-        }
-        .cracolor .form-control{
-  
-
-    border-radius: 5px;
-    padding: 6px 5px 6px 15px;
-    font-size: 0.8rem;
-
-}
-        .cardetail-box2 {
-          padding: 30px;
-          border-radius: 10px;
-        }
-        .service-inner-box {
-          margin-top: 20px;
-        }
-        .service-outer-box svg {
-          width: 98px;
-        }
-        .service-outer-box {
-          height: 136px;
-        }
-        .service-inner-box label {
-          padding: 7px 7px;
-          border-radius: 7px;
-          font-size: 0.65rem;
-        }
-        .location-list2 .form-select {
-          padding: 5px 11px 5px 12px;
-          font-size: 0.8rem;
-          background-position: right 13px center;
-          /* background: 51px; */
-        }
-        .location-box label {
-          padding-left: 12px;
-          font-size: 0.8rem;
-        }
-        label {
-          margin-bottom: 15px;
-        }
-        #OtherStoreInput{
-        border-radius: 5px;
-        padding: 6px 5px 6px 15px;
-        font-size: 0.6rem;
-
-}
-        .cardetail-box2 h5 {
-          font-size: 1.5rem;
-          margin-bottom: 20px;
-          padding-left: 12px;
-          line-height: 1;
-        }
-        .date-field,
-        .time-field {
-          padding: 7px;
-          font-size: 0.8rem;
-          width: unset;
-        }
-        .cardetail-box3 h4 {
-          font-size: 1.5rem;
-          padding-left: 10px;
-          padding-bottom: 15px;
-        }
-        .form-check-input {
-          width: 25px;
-          height: 25px;
-          margin-right: 0px;
-          margin-left: 0px;
-        }
-        .cardetail-box3 .form-check-label {
-          color: #000;
-          font-size: 0.7rem;
-        }
-        #msform .action-button {
-          font-size: 1rem;
-          padding: 7px 5px;
-          margin: 20px 0px 10px 5px;
-          width: 66px;
-        }
-        .checkbox-container {
-          margin-top: 0px;
-        }
-        .model-car {
-          border-radius: 5px;
-          padding: 7px 5px 7px 15px;
-          font-size: 0.8rem;
-          margin-top: 4px;
-        }
-        .out-selected {
-        padding-top: 0px;
+      /* Hide form initially */
+      #mainContent {
+        display: none;
       }
+
+
+
+      ::selection{
+        background-color: #000;
+        color: #fff;
+      }
+
+
+ .form-header h1 {
+        color: white;
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        color: #494949;
+        font-size: 3rem;
+        padding: 50px 0px 20px 150px;
+        line-height: 1;
+      }
+
+.logolight-img{
+padding-right: 180px;
+margin-top: 20px;
+}
+
+
+
+      .form-header h1 span {
+        font-weight: 250;
+        letter-spacing: -0.04em;
+        color: #262626;
+        font-size: 3.5rem;
+      }
+
+    
+
+      .form-box {
+        background: white;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        padding: 50px 70px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        height: 70vh;
+        /* max-width: 800px; */
+        /* margin: -40px auto 50px auto; */
+      }
+
+
+      .form-step {
+        display: none;
+        animation: fadeIn 0.4s ease-in-out;
+      }
+
+      .form-step.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .btn-next,
+      .btn-prev {
+        min-width: 100px;
+      }
+
+
+      .bookingcontainer {
+        background-color: #000;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .form-top-part h3 {
+        font-weight: 600;
+        font-size: 2.8rem;
+        color: #000000;
+      }
+
+
+
+      .form-select:focus {
+        border-color: #1a1a1a;
+        outline: 0;
+        box-shadow: none !important;
+      }
+
+      .form-top-part h5 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #000000 !important;
+        padding: 0px 0px 10px 20px;
+      }
+
+      .form-top-part p {
+        font-weight: 400;
+        font-size: 1.4rem;
+        color: #000000;
+        margin-bottom: 50px;
+        line-height: 1.1;
+      }
+
+      .form-select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #fff;
+        border: 1px solid #1a1a1a;
+        border-radius: 6px;
+        padding: 10px 30px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 13 12' fill='none'%3E%3Cpath d='M6.49781 11.0342L0.484267 0.618417L12.5114 0.618418L6.49781 11.0342Z' fill='%231A1A1A'/%3E%3C/svg%3E");
+
+        background-size: 15px; /* yaha se size bada karna */
+      }
+
+      /* Remove focus outline glow */
+      .form-select:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #1a1a1a;
+      }
+
+
+      .form-top-part {
      
+        height: 46vh;
       }
+
+    .submi-btn  , .btn-prev,
+      .btn-next {
+        border: none;
+        /* padding: 10px 70px; */
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 1.7rem;
+        color: #ebebeb;
+        width: 40%;
+        height: 60px; }
+
+
+      .btn-prev {
+        background-color: #fff;
+        color: #000;
+        border: 2px solid #000;
+
+      }
+      .custom-input {
+        border-radius: 6px;
+        padding: 7px 30px;
+        font-size: 1.3rem;
+        border: 1px solid #1a1a1a;
+        text-transform: uppercase;
+        border-radius: 6px; /* rounded corners */
+        font-size: 1.5rem;
+        outline: none;
+        transition: border-color 0.2s ease;
+      }
+
+      .custom-input::placeholder {
+        font-weight: 400;
+        color: #c0c0c0;
+                text-transform: capitalize;
+      }
+
+      .custom-input:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #1a1a1a;
+      }
+      .colorheading {
+        margin-top: 100px;
+      }
+      input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox ke liye */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+      width: 100%;
+    }
+    #otherInput {
+      display: none;
+      margin-top: 10px;
+    }
+    /* Tags style */
+    .selected-tags {
+      margin-bottom: 10px;
+    }
+    .tag {
+      display: inline-block;
+      background: #003366;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }   
+    
+    /* ---------------------------model----------------------------- */
+ .modal-header {
   
+    justify-content: start !important;
+    padding: 4rem 7rem 2rem 7rem;
+    border-bottom: 2px  dashed #797979;
+    border-top-left-radius: 50px !important;
+    border-top-right-radius: 50px !important;
+}
+.modal-content {
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    outline: 0;
+}
+.modal-footer{
+      padding: 0rem 0rem 4rem 0rem;
+      justify-content: center;
+      border-top: none
+}
+.modal-header h3{
+font-weight: 500;
+font-size:1.1rem;
+color: #000000;
+line-height: 13px;
+margin-top: 5px;
+}
+.modal-header  p{
+font-weight: 500;
+font-size:1.1rem;
+color: #000000;
+line-height: 13px;
+
+}
+.modal-body{
+  padding: 2rem 5rem;
+}
+.modal-body .label{
+font-weight: 500;
+font-size: 1.2rem;
+line-height: 1;
+color: #797979;
+padding-bottom: 10px;
+margin-left: 10px;
+}
+
+.modal-body .value input{
+font-weight: 500;
+font-size: 1.2rem;
+line-height: 1;
+text-transform: uppercase;
+color: #000000;
+border: none;
+background-color: #fff;
+}
+
+ .conformbtn{
+  border: none;
+  background-color: #000;
+  padding: 15px 100px;
+font-weight: 700;
+color: #EBEBEB;
+border-radius: 12px;
+font-size: 1.3rem;
+}
+.editbtn{
+  background-color: #606060;
+    border: none;
+  padding: 15px 50px;
+font-weight: 700;
+color: #EBEBEB;
+border-radius: 12px;
+font-size: 1.3rem;
+
+}
+
+div:where(.swal2-icon).swal2-error {
+    display: none !important;
+}
+
+ .swal2-icon-error button{
+    background-color: #c44a4a !important;
+    font-size: 1rem;
+        padding:10px 40px !important;
+}
+
+.swal2-icon-success button{
+     background-color: #709448 !important;
+    font-size: 1rem;
+        padding:6px 40px !important;
+}
+.swal2-icon-success h2{
+  font-size: 1.5rem;
+}
+.swal2-icon-success .swal2-html-container{
+font-size: 1rem;
+}
+div:where(.swal2-icon) .swal2-icon-show{
+    display: none !important;
+}
+
+    .tag {
+      background-color: #606060;
+      color: white;
+      padding: 7px 20px;
+      border-radius: 20px;
+      margin: 5px;
+      display: inline-block;
+      font-size: 1.1rem;
+    }
+   
+    .checkmark {
+      float: right;
+      color: #000000;
+      font-weight: bold;
+    }
+    .other-input {
+      padding: 7px 20px;
+      margin: 5px;
+      width: calc(100% - 10px);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+.dropdown-item.active, .dropdown-item:active {
+    color: var(--bs-dropdown-link-active-color);
+    text-decoration: none;
+  background-color: #606060;
+}
+    .multylist{
+      background-color: #000;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1.3rem;
+    }
+    .dropdown-item {
+    font-size: 1.1rem;
+}
+.modal-body .value input .disabled{
+  background-color: #fff !important;
+}
+
+.dropdown-menu.show {
+    overflow: auto;
+    display: block;
+    height: 200px;
+}
+
+
+
+
+div:where(.swal2-container) button:where(.swal2-styled):not([disabled]) {
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+
+
+#selectedTags{
+  height: 150px;
+  overflow: auto;
+}
+
+/* 
+
+.fixed-bottom{
+bottom: -30px !important;
+}
+ 
+*/
+
+
+    /* -------------------------------------------------model-------------------------------------------------------- */
+
+
+@media (max-width: 991.98px) {
+  .form-top-part h5 {
+    font-size: 1.5rem;
+    padding: 0px 0px 10px 10px;
+}
+.colorheading {
+    margin-top: 0px;
+}
+
+.modal-header {
+    padding: 3rem 2rem 2rem 4rem;
+}
+.modal-body {
+    padding: 2rem 2rem;
+}
+.modal-body .label {
+    font-size: 1rem;
+}
+.modal-body .value input {
+    font-weight: 500;
+    font-size: 1rem;
+}
+#selectedTags{
+  height: 255px;
+}
+.conformbtn {
+    padding: 13px 50px;
+}
+.form-select {
+    padding: 15px 30px;
+
+}
+.modal-footer {
+    padding: 0rem 0rem 2rem 0rem;
+}
+.custom-input {
+    padding: 15px 30px;
+
+}
+.form-box {
+    padding: 62px 70px;
+
+}
+.form-header h1 {
+
+    font-size: 4.5rem;
+        padding: 70px 0px 20px 80px;
+
+}
+.form-header h1 span {
+    font-size: 4.5rem;
+}
+}
+
+
+@media (max-width: 500px) {
+.form-header h1 span {
+    font-size: 2rem;
+}
+.form-header h1 {
+    font-size: 2.2rem;
+            padding: 60px 0px 0px 40px;
+}
+.logolight-img {
+    padding-right: 30px;
+    margin-top: 68px;
+  }
+  .logolight-img  img{
+width: 46px;
+        height: 38px;
+        object-fit: cover;
+  }
+.form-box {
+    padding: 40px;
+
+  }
+  .form-top-part h3 {
+    font-size: 2rem;
+}
+.form-top-part p {
+    line-height: 1;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+.form-select {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    background-size: 12px;
+}
+.form-top-part h5 {
+    font-size: 1rem;
+    padding: 0px 0px 0px 10px;
+}
+.custom-input {
+    font-size: 1.2rem;
+      padding: 10px 25px;
+}
+.submi-btn, .btn-prev, .btn-next {
+height: 40px;
+
+    font-size: 1rem;
+    width: 49%;
+
+  }
+            /* .btn-next {
+           width: 100%;
+   height: 50px;
+          } */
+    .multylist{
+    padding: 10px 25px;
+      font-size: 1.1rem;
+    }
+    .tag {
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 3px;
+    font-size: 0.9rem;
+}
+.dropdown-item {
+    font-size: 0.9rem;
+}
+
+    .modal-header {
+    padding: 2rem 1rem 2rem 2rem;
+}
+.modal-header h3 {
+    font-size: 1rem;
+    line-height: 13px;
+}
+.modal-header  p {
+    font-size: 0.8rem;
+    line-height: 6px;
+}
+.modal-body {
+    padding: 2rem 1rem;
+}
+.modal-body .label {
+    font-size: 0.85rem;
+    padding-bottom: 0px;
+    margin-left: 10px;
+}
+.modal-body .value input {
+    font-size: 0.8rem;
+}
+.modal-footer {
+    padding: 0rem 0rem 2rem 0rem;
+}
+.editbtn {
+    padding: 10px 30px;
+    border-radius: 7px;
+    font-size: 1rem;
+}
+.conformbtn {
+    border: none;
+    background-color: #000;
+    padding: 10px 30px;
+    border-radius: 7px;
+    font-weight: 700;
+    color: #EBEBEB;
+    font-size: 1rem;
+}
+
+.fullback{
+  width: 100%;
+}
+ .swal2-icon-error .swal2-html-container {
+  font-size: 0.8rem;
+ }
+   .swal2-icon-error h2{
+    font-size: 1.5rem;
+   }
+    .swal2-icon-error button{
+    background-color: #c44a4a !important;
+    font-size: 0.8rem;
+        padding:7px 40px !important;
+}
+  .form-top-part {
+        height: 41vh;
+      }
+
+      #selectedTags {
+        height: 120px;
+    }
+   } 
