@@ -320,7 +320,7 @@ $(document).on("click", "#confirmSubmit", function () {
   };
 
   // ✅ Save to Google Sheet
-  fetch("https://script.google.com/macros/s/AKfycbxpcmzZfcOSIYgejmaNolDBSMHSjhRTH_c5ZPRFMnZqe_9xgJBYK2J1qdtWF3UAHTWu4g/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxuW_cVM0MSsMIzXCaY9rj_eV9K3d83IttHhUtnVImeW9v36GeaeNpGBpj6dbe7tsGIEQ/exec", {
     method: "POST",
     body: JSON.stringify(data)
   })
@@ -595,7 +595,7 @@ font-size: 8px;
           modal.hide();
 
           setTimeout(() => document.activeElement?.blur(), 10);
-        }, 500);
+        }, 100);
       });
     })
     .catch(err => {
