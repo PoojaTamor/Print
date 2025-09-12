@@ -294,38 +294,46 @@ $(document).on("click", ".editbtn", function () {
     });
 });
 
+
+
   // 👉 Confirm & Print
-  $(document).on("click", "#confirmSubmit", function () {
+$(document).on("click", "#confirmSubmit", function () {
+  const $btn = $(this);
+
+  // ✅ Prevent multiple clicks
+  if ($btn.prop("disabled")) return;
+  $btn.prop("disabled", true).text("Processing...");
 
   const data = {
-  fullName: $("#cf_name").val(),
-  phoneNumber: $("#cf_phone").val(),
-  Brand: $("#cf_brand").val(),
-  Model: $("#cf_model").val(),
-  car_color: $("#cf_color").val(),
-  Car_Number: $("#cf_number").val(),
-  service: $("#cf_services").val(),
-Store: $("#cf_store").val(), 
-State: $("#cf_state").val(),
-  dateInput: $("#cf_date").val(),
-  timeInput: $("#cf_time").val(),
-   Reg_No: refNo,
-};
+    fullName: $("#cf_name").val(),
+    phoneNumber: $("#cf_phone").val(),
+    Brand: $("#cf_brand").val(),
+    Model: $("#cf_model").val(),
+    car_color: $("#cf_color").val(),
+    Car_Number: $("#cf_number").val(),
+    service: $("#cf_services").val(),
+    Store: $("#cf_store").val(),
+    State: $("#cf_state").val(),
+    dateInput: $("#cf_date").val(),
+    timeInput: $("#cf_time").val(),
+    Reg_No: refNo,
+  };
 
-    // ✅ Save to Google Sheet
-    fetch("https://script.google.com/macros/s/AKfycbxpcmzZfcOSIYgejmaNolDBSMHSjhRTH_c5ZPRFMnZqe_9xgJBYK2J1qdtWF3UAHTWu4g/exec", {
-      method: "POST",
-      body: JSON.stringify(data)
-    })
-      .then(res => res.json())
-      .then(() => {
-        Swal.fire({
-          icon: "success",
-          title: "Document Ready!",
-          text: "Click OK to Print the customer copy",
-          confirmButtonText: "OK"
-        }).then(() => {
-          // 👉 Print slip window
+  // ✅ Save to Google Sheet
+  fetch("https://script.google.com/macros/s/AKfycbxpcmzZfcOSIYgejmaNolDBSMHSjhRTH_c5ZPRFMnZqe_9xgJBYK2J1qdtWF3UAHTWu4g/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+    .then(res => res.json())
+    .then(() => {
+      Swal.fire({
+        icon: "success",
+        title: "Document Ready!",
+        text: "Click OK to Print the customer copy",
+        confirmButtonText: "OK"
+      }).then(() => {
+        // ⏳ Delay before print (500ms)
+        setTimeout(() => {
           let formattedDate = new Date().toLocaleDateString();
            let printHTML = `
    
@@ -563,39 +571,43 @@ font-size: 8px;
 </body>
 </html>
 `;
+          $("#msform")[0].reset();
+          selectedServices.length = 0;
+          renderTags();
 
-              $("#msform")[0].reset();
-   
-        selectedServices.length = 0;
-        renderTags();
+          // Reset service dropdown checkmarks
+          $("#serviceList .dropdown-item").each(function () {
+            const value = $(this).attr("data-value");
+            $(this).html(value);
+          });
 
-        // ✅ Dropdown items se checkmark remove
-$("#serviceList .dropdown-item").each(function () {
-  const value = $(this).attr("data-value");
-  $(this).html(value); 
-});
-        $(".form-step").hide().first().show();
-        current = 1;
+          $(".form-step").hide().first().show();
+          current = 1;
 
-const newWin = window.open("", "_blank");
-newWin.document.write(printHTML);
-newWin.document.close();
-newWin.focus();
-newWin.print();
-
+          const newWin = window.open();
+          newWin.document.write(printHTML);
+          newWin.document.close();
+          newWin.focus();
+          newWin.print();
 
           // ✅ Close modal
           const modal = bootstrap.Modal.getInstance(document.getElementById("confirmationModal"));
           modal.hide();
 
           setTimeout(() => document.activeElement?.blur(), 10);
-        });
-      })
-      .catch(err => {
-        console.error("Error:", err);
-        Swal.fire("Error", "Something went wrong, please try again!", "error");
+        }, 500);
       });
-  });
+    })
+    .catch(err => {
+      console.error("Error:", err);
+      Swal.fire("Error", "Something went wrong, please try again!", "error");
+    })
+    .finally(() => {
+      // ✅ Re-enable button
+      $btn.prop("disabled", false).text("Confirm & Print");
+    });
+});
+
 });
 
 // =================================================date=time-function===============================================
