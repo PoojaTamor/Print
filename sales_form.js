@@ -540,7 +540,7 @@ font-size: 8px;
             </p>
           </div>
           <div>
-                     <img src="./qr-code.png" alt="QR Code" width="50px" height="50px">
+                     <img src="./QR.svg" alt="QR Code" width="50px" height="50px">
           </div>
         </div>
       </div>
